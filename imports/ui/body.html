@@ -1,0 +1,27 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Garden planner {{incompleteCount}} </h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Tasks
+      </label>
+
+      {{> loginButtons}}
+
+      {{#if currentUser}}
+      <form class="new-plant">
+        <input type="text" name="name" placeholder="Ajoutez une plante" />
+      </form>
+      {{/if}}
+
+    </header>
+ 
+    <ul>
+      {{#each plants}}
+        {{> plant}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
